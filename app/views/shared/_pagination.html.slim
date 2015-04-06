@@ -1,0 +1,18 @@
+- if pages > 1
+  ul.pager
+    -if current_page > 1
+      li.pager__item
+        a.pager__link.pager__link_prev href=url_path.call(url_params.merge({:page => current_page - 1}))
+          span.icon.icon_prev назад
+    - (1..pages).each do |page|
+      li.pager__item
+        - if page == current_page
+          span.pager__link.pager__link_active
+            = page
+        - else
+          a.pager__link href=url_path.call(url_params.merge({:page => page}))
+            = page
+    -if current_page < pages
+      li.pager__item
+        a.pager__link.pager__link_next href=url_path.call(url_params.merge({:page => current_page + 1}))
+          span.icon.icon_next вперёд

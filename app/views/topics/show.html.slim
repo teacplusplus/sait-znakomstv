@@ -1,0 +1,41 @@
+= content_for :meta_head
+  meta name="description" content=@topic.description
+  meta name="keywords" content=@topic.keywords
+= content_for :full_title
+  = raw @topic.title
+= content_for :sidebar
+  = render 'shared/auth_form'
+
+
+section.section
+  h1.section__head.section__head_top
+    span.section__head__name
+      = raw @topic.title
+  .filter
+    ul.filter__list
+      li.filter__item
+        a.filter__link href=topic_rubrics_path()
+          |Все статьи
+      - @topic_rubrics.each do |topic_rubric|
+        li.filter__item class="#{@topic.rubric_id == topic_rubric.id ? 'filter__item_active' : ''}"
+          a.filter__link href=topic_rubrics_path(:rubric_id => topic_rubric.id)
+            = topic_rubric.title
+  .block-wrap
+    article.block.article
+      = raw @topic.content
+    section.article-relative.clearfix
+      h2.section__head
+        span.section__head__name Может быть интересно
+      - @topics.each do |topic|
+        article.block.article.article_preview
+          a.article__link href=topic_path(topic.url)
+            figure.article__fig
+              img alt=topic.keywords src=topic.image_url
+            header
+              time.article__time datetime=topic.putdate
+                = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
+              h3.article__title
+                = raw topic.title
+            p
+              = raw topic.description
+

@@ -1,0 +1,30 @@
+= content_for :sidebar
+  = render 'shared/auth_form'
+.content
+  section.section
+    .section__head.section__head_top
+      span.section__head__name Статьи на тему знакомств, отношений и любви.
+    .filter
+      ul.filter__list
+        li.filter__item class="#{params[:rubric_id].blank? ? 'filter__item_active' : ''}"
+          a.filter__link href=topic_rubrics_path()
+            |Все статьи
+        - @topic_rubrics.each do |topic_rubric|
+          li.filter__item class="#{params[:rubric_id].to_i == topic_rubric.id ? 'filter__item_active' : ''}"
+            a.filter__link href=topic_rubrics_path(:rubric_id => topic_rubric.id)
+              = topic_rubric.title
+    .article-list
+      - @topics.each do |topic|
+        article.block.article
+          a.article__link href=topic_path(topic.url)
+            header
+              time.article__time datetime=topic.putdate
+                = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
+              h1.section__head.section__head_top
+                span.section__head__name
+                  = topic.title
+            figure.article__fig
+              img alt=topic.keywords src=topic.image_url
+            p.article__text
+              = raw topic.description
+      = render 'shared/pagination', :pages => @pages, :current_page => params[:page].to_i, :url_path => method(:topic_rubrics_path), :url_params => {:rubric_id => params[:rubric_id]}

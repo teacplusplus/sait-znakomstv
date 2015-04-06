@@ -1,0 +1,32 @@
+= render 'shared/ie_header'
+head
+  title
+    = content_for?(:page_title) ? "Знакомства на Tabor.ru - сайт знакомств c бесплатной регистрацией - #{yield(:page_title)}" : 'Знакомства на Tabor.ru - сайт знакомств c бесплатной регистрацией.'
+
+
+  = render 'shared/meta'
+
+  - if content_for?(:meta_head)
+    = yield :meta_head
+  - else
+    meta name="description" content="Tabor.ru - популярный сайт знакомств нового поколения. У нас большая база реальных и активных анкет парней и девушек, большой онлайн и море интересных сервисов. Мы гарантируем, что у нас Вы найдете вторую половинку приложив минимум усилий."
+    meta name="keywords" content="знакомства, сайт знакомств, знакомство, бесплатные знакомства, бесплатный сайт знакомств, знакомства бесплатно, знакомства с девушками, знакомства с мужчинами, знакомства табор, познакомлюсь"
+
+
+  = stylesheet_link_tag 'application'
+  = javascript_include_tag 'application'
+
+body
+  .page
+    .header-wrap
+      header.header
+        .logo
+          a.logo__link href=root_url id="logo"
+            = image_tag "http://im.tabor.ru/production/assets/logo.png", :alt => "Знакомства без регистрации бесплатно"
+    .wrap.clearfix
+      .content
+        = yield
+      = yield :sidebar
+  = render 'shared/footer'
+
+' </html>

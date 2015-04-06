@@ -36,3 +36,27 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'yui-compressor'
+
+gem 'russian'
+
+gem 'js-routes'
+
+gem 'slim'
+
+gem 'will_paginate'
+
+gem 'rails_admin'
+
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
+
+group :production do
+  gem 'unicorn'
+end

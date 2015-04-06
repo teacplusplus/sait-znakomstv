@@ -1,0 +1,15 @@
+.sidebar
+  .welcome.clearfix
+    h1.welcome__title Сайт знакомств
+    p.welcome__intro Первое знакомство уже через 5 минут после регистрации!
+    h3.welcome__title Регистрация
+    form.welcome__form action="http://tabor.ru/signup" method="GET"
+      .form__item
+        label.form__label for="fCountry"  Ваша страна
+        = select_tag 'country_id', options_for_select(Country.cache_ordered_for_select,  3159), {class: 'form__select', id: 'welcome_country_id'}
+      .form__item
+        input.form__inp#welcome_city placeholder="Введите город" type="text" name="city"
+      .form__item
+        button.button.button_mdm.button_yellow.button_iconed type="submit"
+          span.icon.icon_next-step
+          | Зарегистрироваться
