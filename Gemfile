@@ -59,3 +59,5 @@ end
 group :production do
   gem 'unicorn'
 end
+
+gem 'redis', "~> 3.0.6"

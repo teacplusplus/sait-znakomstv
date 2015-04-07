@@ -129,6 +129,7 @@ GEM
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.7)
     ref (1.0.5)
     remotipart (1.2.1)
     russian (0.6.0)
@@ -185,6 +186,7 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.17)
   rails_admin
+  redis (~> 3.0.6)
   russian
   sass-rails (~> 3.2.3)
   slim
