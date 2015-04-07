@@ -32,8 +32,9 @@ section.section
             figure.article__fig
               img alt=topic.keywords src=topic.image_url
             header
-              time.article__time datetime=topic.putdate
-                = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
+              - if topic.putdate.present?
+                time.article__time datetime=topic.putdate
+                  = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
               h3.article__title
                 = raw topic.title
             p

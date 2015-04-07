@@ -18,9 +18,10 @@
         article.block.article
           a.article__link href=topic_path(topic.url)
             header
-              time.article__time datetime=topic.putdate
-                = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
-              h1.section__head.section__head_top
+              -if topic.putdate.present?
+                time.article__time datetime=topic.putdate
+                  = I18n.localize(topic.putdate, :format => '%d-%m-%Y')
+              h4.section__head.section__head_top
                 span.section__head__name
                   = topic.title
             figure.article__fig
