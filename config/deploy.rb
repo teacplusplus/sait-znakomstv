@@ -67,5 +67,5 @@ end
 
 
 
-before 'deploy', 'deploy:compile_assets'
+# before 'deploy', 'deploy:compile_assets'
 after 'deploy', 'deploy:restart'
