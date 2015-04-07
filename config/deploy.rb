@@ -27,7 +27,7 @@ set :unicorn_pid, "/home/a06401/var/zs-1/run/unicorn.pid"
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/unicorn.rb')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/unicorn.rb', 'config/config.rb')
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
