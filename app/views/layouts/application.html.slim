@@ -1,7 +1,7 @@
 = render 'shared/ie_header'
 head
   title
-    = content_for?(:page_title) ? "Знакомства на Tabor.ru - сайт знакомств c бесплатной регистрацией - #{yield(:page_title)}" : 'Знакомства на Tabor.ru - сайт знакомств c бесплатной регистрацией.'
+    = content_for?(:page_title) ? yield(:page_title) : 'Про знакомства и сайт знакомств'
 
 
   = render 'shared/meta'
@@ -22,7 +22,7 @@ body
       header.header
         .logo
           a.logo__link href=root_url id="logo"
-            = image_tag "http://im.tabor.ru/production/assets/logo.png", :alt => "Знакомства без регистрации бесплатно"
+            = image_tag "http://im.tabor.ru/production/assets/logo.png", :alt => "Знакомства без регистрации бесплатно", :title => "Про Знакомства и сайт знакомств"
     .wrap.clearfix
       .content
         = yield

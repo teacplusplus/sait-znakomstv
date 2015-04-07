@@ -1,7 +1,7 @@
 = content_for :meta_head
   meta name="description" content=@topic.description
   meta name="keywords" content=@topic.keywords
-= content_for :full_title
+= content_for :page_title
   = raw @topic.title
 = content_for :sidebar
   = render 'shared/auth_form'
@@ -24,7 +24,7 @@ section.section
     article.block.article
       = raw @topic.content
     section.article-relative.clearfix
-      h2.section__head
+      h4.section__head
         span.section__head__name Может быть интересно
       - @topics.each do |topic|
         article.block.article.article_preview

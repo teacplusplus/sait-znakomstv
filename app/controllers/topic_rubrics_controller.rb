@@ -16,6 +16,6 @@ class TopicRubricsController < ApplicationController
 
 
   def per_page
-    5
+    12
   end
 end
