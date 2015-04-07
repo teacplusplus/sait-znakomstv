@@ -651,7 +651,7 @@ textarea {
     height: 7px;
     display: block;
     content: '';
-    background: url(http://im.tabor.ru/production/assets/footer-border.png) left bottom repeat-x;
+    background: url(footer-border.png) left bottom repeat-x;
 }
 
 
@@ -668,7 +668,7 @@ textarea {
 .icon {
     position: absolute;
     display: block;
-    /*background-image: url(http://im.tabor.ru/production/assets/new_icons.png);*/
+    /*background-image: url(new_icons.png);*/
     overflow: hidden;
     white-space: nowrap;
     text-indent: 100%;
@@ -705,7 +705,7 @@ textarea {
     left: -5px;
     display: inline-block;
     vertical-align: bottom;
-    background: url(http://html5.tabor.ru/img/register.png) 0 0 no-repeat;
+    background: url(register.png) 0 0 no-repeat;
 }
 
 
@@ -1122,7 +1122,7 @@ textarea {
     width: 12px;
     height: 9px;
     overflow: hidden;
-    background: url(http://html5.tabor.ru/img/arrow.png) 0 0 no-repeat;
+    background: url(arrow.png) 0 0 no-repeat;
 }
 
 .jq-selectbox .dropdown {
@@ -1285,7 +1285,7 @@ textarea {
     width: 151px;
     padding-left: 19px;
     padding-top: 7px;
-    background: url(http://im.tabor.ru/production/assets/online-arr.png) 0 -1px no-repeat;
+    background: url(online-arr.png) 0 -1px no-repeat;
     -webkit-border-radius: 5px 0 0 5px;
     -moz-border-radius: 5px 0 0 5px;
     border-radius: 5px 0 0 5px;
@@ -1626,7 +1626,7 @@ textarea {
     width: 16px;
     height: 15px;
     content: '';
-    background: url(http://im.tabor.ru/production/assets/new_icons.png) -188px -34px no-repeat;
+    background: url(new_icons.png) -188px -34px no-repeat;
 }
 
 .filter__item_black .filter__link {
