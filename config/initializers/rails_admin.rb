@@ -1,10 +1,9 @@
-
+yml = YAML.load_file("#{Rails.root.to_s}/config/config.yml")[Rails.env]
 RailsAdmin.config do |config|
 
   config.authorize_with do
     authenticate_or_request_with_http_basic('Login required') do |username, password|
-      username == 'tea' &&
-      password == 'tea'
+      username == yml['admin']['username'] && password == yml['admin']['password']
     end
   end
 
