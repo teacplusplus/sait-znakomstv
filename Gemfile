@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '3.2.17'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -54,6 +54,7 @@ gem 'rails_admin'
 group :development do
   gem 'capistrano', '~> 3.2.0'
   gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
 end
 
 group :production do

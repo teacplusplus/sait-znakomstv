@@ -24,7 +24,7 @@ require 'capistrano/rails/migrations'
 # require 'capistrano/bundler'
 require 'capistrano/rails'
 
-require 'capistrano3/unicorn'
+# require 'capistrano3/unicorn'
 
 
 
